@@ -24,7 +24,7 @@ export const options: NextAuthOptions = {
                         },
                         async authorize(credentials) {
                                 if (!credentials?.email || !credentials?.password) {
-                                        throw new Error("Email and Password Fields Are Required!");
+                                        throw new Error("Email and Password Fields Are Required");
                                 }
                                 const user = await prismadb.user.findUnique({
                                         where: {
